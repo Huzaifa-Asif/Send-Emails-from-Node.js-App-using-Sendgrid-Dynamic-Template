@@ -1,14 +1,15 @@
 # Send-Emails-from-Node.js-App-using-Sendgrid-Dynamic-Template
 
-// this is the sendgrid module to send emails
+## this is the sendgrid module to send emails
+```
 const sgMail = require('@sendgrid/mail')
 
 const sgMailApiKey = 'your-api-key'
 
 sgMail.setApiKey(sgMailApiKey)
-
-
-// Method to send normal email - sendgrid
+```
+## Method to send normal email - sendgrid
+```
 module.exports.sendEmail = (email, password) => {
     
   console.log(email +" : "+password)
@@ -28,9 +29,10 @@ module.exports.sendEmail = (email, password) => {
       });
 
 }
+```
 
-
-// Method to send dynamic template email - sendgrid
+## Method to send dynamic template email - sendgrid
+```
 module.exports.sendTemplate = (to,from, templateId, dynamic_template_data) => {
   const msg = {
     to,
@@ -51,3 +53,4 @@ module.exports.sendTemplate = (to,from, templateId, dynamic_template_data) => {
       console.error('send-grid-error: ', error.toString());
     });
 };
+```
